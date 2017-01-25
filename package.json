@@ -1,0 +1,11 @@
+{
+  "name": "my-react-redux-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "author": "Aneesa Awaludin <a_aneesa@yahoo.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ."
+  }
+}
