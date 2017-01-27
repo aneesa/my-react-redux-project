@@ -1,10 +1,14 @@
 import { connect } from 'react-redux';
 import Button from '../components/button';
-import { makeBark } from '../actions/dog-actions';
+import { toggleBark } from '../actions/dog-actions';
 
 const mapDispatchToProps = dispatch => ({
-  action: () => { dispatch(makeBark()); },
-  actionLabel: 'Bark',
+  action: () => { dispatch(toggleBark()); },
+  actionLabel: Button.propTypes.actionLabel === 'Bark' ? 'Stop Bark' : 'Bark',
 });
 
-export default connect(null, mapDispatchToProps)(Button);
+const mapStateToProps = state => ({
+  actionLabel: state.dog.get('hasBarked') ? 'Stop Bark' : 'Bark',
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Button);
